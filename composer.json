@@ -1,0 +1,47 @@
+{
+  "name": "alicom13/wsc",
+  "description": "WordPress Composer",
+  "type": "project",
+  "license": "MIT",
+  "homepage": "https://github/alicom13/wsc/",
+  "authors": [
+      {
+          "name": "Kang Ali",
+          "email": "ali@wsw.biz.id"
+      }
+  ],
+  "require": {
+    "php": ">=8.1",
+    "composer/installers": "^2.2",
+    "roots/wordpress": "6.7.1",
+    "roots/wp-config": "1.0.0",
+    "roots/wp-password-bcrypt": "1.2.0",
+    "vlucas/phpdotenv": "^5.5",
+    "wpackagist-plugin/gutentor": "^3.4",
+    "wpackagist-theme/cosmoswp": "^1.3"
+  },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org",
+            "only": [
+                "wpackagist-plugin/*",
+                "wpackagist-theme/*"
+            ]
+        }
+    ],
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "roots/wordpress-core-installer": true
+    }
+  },
+  "extra": {
+      "installer-paths": {
+          "public/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+          "public/app/plugins/{$name}/": ["type:wordpress-plugin"],
+          "public/app/themes/{$name}/": ["type:wordpress-theme"]
+      },
+      "wordpress-install-dir": "public/wp"
+  }
+}
