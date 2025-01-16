@@ -4,6 +4,8 @@
   "type": "project",
   "license": "MIT",
   "homepage": "https://github/alicom13/wsc/",
+	"minimum-stability": "dev",
+	"prefer-stable": true,
   "authors": [
       {
           "name": "Kang Ali",
